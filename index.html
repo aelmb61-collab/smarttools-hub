@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartTools Hub</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#0f172a;color:white}
+header{padding:20px;text-align:center;background:#020617}
+h1{margin:0}
+nav{display:flex;gap:15px;justify-content:center;margin-top:10px}
+nav a{color:#38bdf8;text-decoration:none;font-weight:bold}
+.container{max-width:1000px;margin:auto;padding:20px}
+.card{background:#1e293b;border-radius:12px;padding:20px;margin-bottom:20px}
+button{background:#38bdf8;border:none;padding:10px 15px;border-radius:8px;font-weight:bold;cursor:pointer}
+input{padding:10px;border-radius:8px;border:none;margin-top:10px;width:100%}
+.result{margin-top:10px;font-weight:bold;color:#4ade80}
+.ad{background:#111827;border:2px dashed #334155;text-align:center;padding:25px;margin:20px 0;border-radius:10px}
+footer{text-align:center;padding:20px;background:#020617}
+</style>
+</head>
+<body>
+
+<header>
+<h1>SmartTools Hub</h1>
+<p>Free useful tools for everyone</p>
+<nav>
+<a href="#tools">Tools</a>
+<a href="#learn">Learn</a>
+<a href="#about">About</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="ad">AdSense Ad Space</div>
+
+<section id="tools">
+
+<div class="card">
+<h2>🧮 Quick Calculator</h2>
+<input id="num1" placeholder="First number">
+<input id="num2" placeholder="Second number">
+<button onclick="calculate()">Add</button>
+<div class="result" id="calcResult"></div>
+</div>
+
+<div class="card">
+<h2>🔐 Password Generator</h2>
+<button onclick="generatePassword()">Generate Password</button>
+<div class="result" id="passwordResult"></div>
+</div>
+
+<div class="card">
+<h2>💡 Daily Motivation</h2>
+<button onclick="motivate()">Get Motivation</button>
+<div class="result" id="motivationResult"></div>
+</div>
+
+</section>
+
+<div class="ad">AdSense Ad Space</div>
+
+<section id="learn" class="card">
+<h2>📚 Learn Web Development</h2>
+<p>Learn HTML, CSS, JavaScript and start building websites and games.</p>
+<ul>
+<li>HTML builds the structure</li>
+<li>CSS makes it beautiful</li>
+<li>JavaScript makes it interactive</li>
+</ul>
+</section>
+
+<section id="about" class="card">
+<h2>About</h2>
+<p>This website provides free useful tools for students, developers and everyone. More tools coming soon!</p>
+</section>
+
+<div class="ad">AdSense Ad Space</div>
+
+</div>
+
+<footer>
+<p>© 2026 SmartTools Hub</p>
+</footer>
+
+<script>
+function calculate(){
+let a=parseFloat(document.getElementById('num1').value)
+let b=parseFloat(document.getElementById('num2').value)
+document.getElementById('calcResult').innerText="Result: "+(a+b)
+}
+
+function generatePassword(){
+let chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%"
+let pass=""
+for(let i=0;i<12;i++){
+pass+=chars[Math.floor(Math.random()*chars.length)]
+}
+document.getElementById('passwordResult').innerText=pass
+}
+
+function motivate(){
+let quotes=[
+"Keep learning every day.",
+"Small progress is still progress.",
+"Your future depends on what you build today.",
+"Code. Learn. Build. Repeat.",
+"Dream big and start small."
+]
+let q=quotes[Math.floor(Math.random()*quotes.length)]
+document.getElementById('motivationResult').innerText=q
+}
+</script>
+
+</body>
+</html>
