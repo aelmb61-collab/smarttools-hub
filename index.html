@@ -115,6 +115,22 @@
         </div>
     </div>
 </div>
+    <div style="text-align: center; padding: 50px; font-family: sans-serif;">
+    <h2>Tap the Diamond to Rank Up!</h2>
+    <div id="diamond" style="font-size: 100px; cursor: pointer;">💎</div>
+    <p>Score: <span id="score">0</span></p>
+    <p style="color: gray; font-size: 12px;">Rank: Beginner</p>
+</div>
+
+<script>
+    let count = 0;
+    document.getElementById('diamond').onclick = function() {
+        count++;
+        document.getElementById('score').innerText = count;
+        // This keeps them clicking while your Monetag "Bright Tag" 
+        // works in the background to show ads!
+    };
+</script>
 
 <footer id="privacy">
     <h2>Privacy Policy & Terms</h2>
